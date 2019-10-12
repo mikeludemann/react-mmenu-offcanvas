@@ -56,7 +56,7 @@ import setselected from "mmenu-js/dist/addons/setselected/mmenu.setselected";
 import sidebar from "mmenu-js/dist/addons/sidebar/mmenu.sidebar";
 import toggles from "mmenu-js/dist/addons/toggles/mmenu.toggles";
 
-class Offcanvas extends Component {
+class Navi extends Component {
 
 	constructor(props) {
 		super(props)
@@ -133,7 +133,7 @@ class Offcanvas extends Component {
   
 }
 
-Offcanvas.propTypes = {
+Navi.propTypes = {
 	id: PropTypes.string.isRequired,
 	options: PropTypes.object.isRequired,
 	children: PropTypes.element
@@ -141,6 +141,86 @@ Offcanvas.propTypes = {
 
 // #####################################
 
+class NaviList extends Component {
+
+  render(){
+    return(
+      <ul className={this.props.class}>
+        {this.props.children}
+      </ul>
+    );
+  }
+  
+}
+
+NaviList.propTypes = {
+	class: PropTypes.string.isRequired,
+	children: PropTypes.element
+}
+
+// #####################################
+
+class NaviListItem extends Component {
+
+  render(){
+    return(
+      <li className={this.props.class}>
+        {this.props.children}
+      </li>
+    );
+  }
+  
+}
+
+NaviListItem.propTypes = {
+	class: PropTypes.string.isRequired,
+	children: PropTypes.element
+}
+
+// #####################################
+
+class NaviListText extends Component {
+
+  render(){
+    return(
+      <span className={this.props.class}>
+        {this.props.children}
+      </span>
+    );
+  }
+  
+}
+
+NaviListText.propTypes = {
+	class: PropTypes.string.isRequired,
+	children: PropTypes.element
+}
+
+// #####################################
+
+class NaviListLink extends Component {
+
+  render(){
+    return(
+      <a href={this.props.url}>
+        {this.props.children}
+      </a>
+    );
+  }
+  
+}
+
+NaviListLink.propTypes = {
+	url: PropTypes.string.isRequired,
+	children: PropTypes.element
+}
+
+// #####################################
+
 export {
-  Offcanvas
+  Navi,
+  NaviList,
+  NaviListItem,
+  NaviListText,
+  NaviListLink
 }
